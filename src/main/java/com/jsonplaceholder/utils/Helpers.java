@@ -1,20 +1,16 @@
 package com.jsonplaceholder.utils;
 
-import io.restassured.response.Response;
-import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Random;
 import java.util.stream.IntStream;
 import org.apache.commons.lang3.Range;
-import org.json.JSONObject;
 
 public class Helpers {
 
   private static final String ALPHABET = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
-  public static JSONObject getRandomObjectFromResponse(Response response) {
-    List<LinkedHashMap> usersList = response.jsonPath().getList(".");
-    return new JSONObject(usersList.get(new Random().nextInt(usersList.size() - 1)));
+  public static Object getRandomObjectFromList(List<Object> list) {
+    return list.get(new Random().nextInt(list.size() - 1));
   }
 
   public static boolean isNumberInRange(int num, Range<Integer> range) {

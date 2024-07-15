@@ -10,7 +10,7 @@ JSONPlaceHolder api based applications.
 Ensure you have the following software installed on your system:
 
 * IntelliJ or Eclipse
-* [JDK](https://www.java.com/en/download/) 1.8 or higher
+* JDK 11
 * [Maven](https://maven.apache.org/download.cgi) 3.6 or higher
 
 ## Getting Started
@@ -32,6 +32,8 @@ To run your TestNG tests, use the following Maven command:
 mvn test
 ```
 
+or using test
+
 ## Directory Structure
 
 The project consists of the following files:
@@ -50,19 +52,24 @@ JSONPlaceHolder_API_Automation
    │   │       └── jsonplaceholder
    │   │           ├── api
    │   │           │   ├── BaseAPI.java
-   │   │           │   ├── Posts.java
-   │   │           │   └── Users.java
+   │   │           │   ├── PostsAPIController.java
+   │   │           │   └── UsersAPIController.java
    │   │           ├── common
    │   │           │   └── Constants.java
+   │   │           ├── pojo
+   │   │           │   ├── Post.java
+   │   │           │   └── User.java
    │   │           └── utils
-   │   │               └── Helpers.java
+   │   │               ├── Helpers.java
+   │   │               └── LogManager.java
    │   └── resources
    │       └── config.properties
    └── test
        ├── java
-       │   └── post
-       │       └── CreatePostTest.java
+       │   └── com
+       │       └── jsonplaceholder
+       │           └── post
+       │               └── CreatePostTest.java
        └── resources
-           └── jsonSchemas
-               └── createPostResponse.json
+           └── testng.xml
 ```
