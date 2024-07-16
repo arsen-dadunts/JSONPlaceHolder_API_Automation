@@ -60,8 +60,7 @@ JSONPlaceHolder_API_Automation
    │   │           │   ├── Post.java
    │   │           │   └── User.java
    │   │           └── utils
-   │   │               ├── Helpers.java
-   │   │               └── LogManager.java
+   │   │               └── Helpers.java
    │   └── resources
    │       └── config.properties
    └── test

@@ -1,6 +1,5 @@
 package com.jsonplaceholder.post;
 
-import static com.jsonplaceholder.utils.LogManager.log;
 import static com.jsonplaceholder.utils.Helpers.generateRandomString;
 import static com.jsonplaceholder.utils.Helpers.getRandomObjectFromList;
 import static com.jsonplaceholder.utils.Helpers.isNumberInRange;
@@ -10,10 +9,12 @@ import com.jsonplaceholder.api.UsersAPIController;
 import com.jsonplaceholder.pojo.Post;
 import com.jsonplaceholder.pojo.User;
 import java.util.List;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.Range;
 import org.assertj.core.api.Assertions;
 import org.testng.annotations.Test;
 
+@Slf4j
 public class CreatePostTest {
 
   private PostsAPIController posts;

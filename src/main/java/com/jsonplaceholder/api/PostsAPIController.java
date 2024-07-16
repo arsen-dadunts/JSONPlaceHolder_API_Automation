@@ -6,12 +6,15 @@ import static io.restassured.RestAssured.given;
 
 import com.jsonplaceholder.pojo.Post;
 import io.restassured.response.Response;
+import lombok.extern.slf4j.Slf4j;
 
+@Slf4j
 public class PostsAPIController extends BaseAPI {
 
   public static final String POSTS = "/posts";
 
   public Post[] getPostsByUserId(int userId) {
+    log.info("Get posts by '{}' userId", userId);
     Response response = given()
         .spec(getSpecBuilder())
         .queryParam("userId", userId)
@@ -22,6 +25,7 @@ public class PostsAPIController extends BaseAPI {
   }
 
   public Post createPost(Post postPayload) {
+    log.info("Create a new post");
     Response response = given()
         .spec(getSpecBuilder())
         .body(postPayload)
